@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select Class and subject</title>
+
+</head>
+<body>
+    <form action="{% url 'create' %}" method="POST">
+{% csrf_token %}
+       <!-- <input type="text" name="std" placeholder="Class">
+        <input type="text" name="sub" placeholder="Subject">
+        <button type="Submit"> Done</button>-->
+
+        <select name="std" id="input" onchange="random()">
+            <option>Select Class</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+
+        </select>
+
+        <div id="output">
+
+        </div>
+
+        <button type="submit">Done</button>
+
+
+    </form>
+
+    <script>
+        function random(){
+            let a = document.getElementById('input').value;
+            var primary = ["HINDI", "ENGLISH", "MATHS", "EVS"];
+            var secondary = ["ENGLISH", "HINDI", "MATHS", "SCIENCE", "SANSKRIT", "SST"];
+            var hsecondary = ["COMPUTER SCIENCE", "ENGLISH", "MATHS", "SCIENCE"];
+            
+            if (a==="1"){
+                var array = primary;
+            }
+            if (a==="2"){
+                var array = primary;
+            }
+            if (a==="3"){
+                var array = primary;
+            }
+            if (a==="4"){
+                var array = primary;
+            }
+            if (a==="5"){
+                var array = primary;
+            }
+            if (a==="6"){
+                var array = secondary;
+            }
+            if (a==="7"){
+                var array = secondary;
+            }
+            if (a==="8"){
+                var array = secondary;
+            }
+            if (a==="9"){
+                var array = secondary;
+            }
+            if (a==="10"){
+                var array = secondary;
+            }
+            if (a==="11"){
+                var array = hsecondary;
+            }
+            if (a==="12"){
+                var array = hsecondary;
+            }
+
+
+
+
+            var string='';
+            for(i=0; i<array.length;i++){
+                string=string+"<option>"+array[i]+"</option>";
+            }
+            string = "<select name='sub'>"+string+"</select>";
+
+            document.getElementById('output').innerHTML=string;
+        }
+    </script>
+</body>
+</html>
